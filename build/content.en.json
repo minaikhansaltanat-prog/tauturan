@@ -1,0 +1,284 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "htmlLang": "en",
+  "siteName": "Tau-Turan Resort",
+  "tagline": "A mountain recreation area in the foothills of Almaty",
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms & Rates",
+    "business": "For Business",
+    "gallery": "Gallery",
+    "contacts": "Contacts & Booking"
+  },
+  "slugs": {
+    "home": "index.html",
+    "rooms": "rooms-and-rates.html",
+    "business": "for-business.html",
+    "gallery": "gallery.html",
+    "contacts": "contacts-and-booking.html"
+  },
+  "langNames": { "ru": "РУС", "kz": "ҚАЗ", "en": "ENG" },
+  "whatsapp": {
+    "booking": "77279836690",
+    "bookingDisplay": "+7 727 983 6690",
+    "business": "77073060677",
+    "businessDisplay": "+7 707 306 0677",
+    "general": "77022138632",
+    "generalDisplay": "+7 702 213 8632"
+  },
+  "email": "tauturaninfo@gmail.com",
+  "instagram": { "main": "https://instagram.com/tauturaninfo", "camp": "https://instagram.com/tauturan_official" },
+  "campSite": "https://tauturan.kz",
+  "waFab": { "label": "Message us on WhatsApp" },
+  "footer": {
+    "about": "Tau-Turan Resort is a year-round mountain recreation area in the foothills of Almaty: family getaways, corporate events, team-building and celebrations.",
+    "navTitle": "Sections",
+    "contactsTitle": "Contacts",
+    "campTitle": "Our summer camp",
+    "campText": "Tau-Turan Kids Camp is a separate project on the same location.",
+    "campLink": "tauturan.kz →",
+    "rights": "All rights reserved.",
+    "address": "Almaty region, Talgar district, Besagash village, Tau-Turan mountain area",
+    "hours": "Daily, 09:00 – 20:00"
+  },
+  "pages": {
+    "home": {
+      "title": "Tau-Turan Resort — mountain getaways, team-building & events near Almaty",
+      "description": "Tau-Turan Resort is a premium mountain recreation area in the foothills of Almaty: family getaways, corporate retreats, team-building and celebrations, year-round.",
+      "hero": {
+        "eyebrow": "Almaty foothills · year-round",
+        "h1": "Mountains, fresh air and quiet — minutes from the city",
+        "lead": "Chalets and cottages, a banquet hall and open-air activity grounds — Tau-Turan Resort welcomes families, companies and large events all year round.",
+        "ctaPrimary": { "label": "Book a tour", "href": "contacts-and-booking.html" },
+        "ctaSecondary": { "label": "Calculate your stay", "href": "#calculator" },
+        "videoTag": "Welcome to Tau-Turan"
+      },
+      "segments": {
+        "title": "A getaway that fits your plan",
+        "subtitle": "Four formats — one address in the Almaty foothills",
+        "items": [
+          { "title": "Family weekend getaways", "text": "Chalets and cottages at the foot of the mountains, a pool, a bathhouse and fresh air instead of city noise.", "label": "View rooms", "href": "rooms-and-rates.html" },
+          { "title": "Corporate retreats", "text": "Seminar halls, catering and group accommodation for teams of any size.", "label": "For business", "href": "for-business.html" },
+          { "title": "Team-building", "text": "Outdoor activity programs run by certified instructors with full technical support.", "label": "Team-building programs", "href": "for-business.html" },
+          { "title": "Celebrations & events", "text": "Birthdays, anniversaries and weddings surrounded by mountains — banquet hall or terrace, your choice.", "label": "Book a date", "href": "contacts-and-booking.html" }
+        ]
+      },
+      "calculator": {
+        "eyebrow": "Online calculator",
+        "title": "Calculate your stay",
+        "subtitle": "Pick the accommodation type, season and dates — get an estimate and send it to our manager on WhatsApp in one tap.",
+        "typeLabel": "Accommodation type",
+        "types": [
+          { "value": "chalet", "label": "Chalet (up to 4–6 guests)", "high": "55000", "low": "38000" },
+          { "value": "cottage", "label": "Family cottage (up to 6–8 guests)", "high": "75000", "low": "52000" },
+          { "value": "room", "label": "Guesthouse room (up to 2–3 guests)", "high": "32000", "low": "22000" }
+        ],
+        "seasonLabel": "Season",
+        "seasons": [
+          { "value": "high", "label": "High season" },
+          { "value": "low", "label": "Low season" }
+        ],
+        "nightsLabel": "Number of nights",
+        "guestsLabel": "Number of guests",
+        "resultLabel": "Estimated cost",
+        "resultNote": "The final price is confirmed by our manager based on dates and availability.",
+        "waButton": "Send estimate on WhatsApp",
+        "msgIntro": "Hello! I'd like to confirm a stay estimate for Tau-Turan Resort.",
+        "msgTotal": "Total"
+      },
+      "trust": {
+        "title": "We work transparently",
+        "items": [
+          { "title": "VAT and non-VAT billing", "text": "Pay any way that suits you — for private guests and companies alike." },
+          { "title": "Sole proprietors & LLPs", "text": "We work with individual entrepreneurs and legal entities." },
+          { "title": "Full documentation", "text": "Contract, invoice and closing documents for your accounting." },
+          { "title": "Certified safety", "text": "Accredited instructors on every activity." }
+        ]
+      },
+      "galleryTeaser": {
+        "title": "The Tau-Turan atmosphere",
+        "subtitle": "Mountains, interiors and activities — the full gallery is inside",
+        "more": "View the full gallery",
+        "moreHref": "gallery.html"
+      },
+      "testimonialsTeaser": {
+        "title": "What guests say",
+        "subtitle": "Written, audio and video testimonials — the full list is in the Gallery section",
+        "more": "All testimonials",
+        "moreHref": "gallery.html#testimonials",
+        "items": [
+          { "name": "Aigerim S.", "role": "Family getaway", "text": "We came for the weekend as a family — the kids loved the pool, and we finally exhaled thanks to the quiet and fresh air." },
+          { "name": "Marat B.", "role": "HR Director, IT company", "text": "We organized team-building for 40 people. Everything was on point: transfer, sound, activity grounds. We'll be back." },
+          { "name": "Dinara K.", "role": "Wedding planner", "text": "We hosted a wedding on the terrace overlooking the mountains — guests still talk about that view." }
+        ]
+      },
+      "finalCta": {
+        "title": "Ready to book your visit?",
+        "text": "Leave a request — our manager will reach out on WhatsApp within 15 minutes.",
+        "ctaLabel": "Book a tour",
+        "ctaHref": "contacts-and-booking.html"
+      }
+    },
+    "rooms": {
+      "title": "Rooms & Rates — Tau-Turan Resort",
+      "description": "Chalets, family cottages and guesthouse rooms at Tau-Turan Resort. Seasonal rates, capacity and infrastructure.",
+      "hero": {
+        "eyebrow": "Accommodation",
+        "h1": "Rooms & Rates",
+        "lead": "From a cosy room for two to a private chalet for the whole family — choose the format that fits your stay."
+      },
+      "rooms": {
+        "title": "Accommodation options",
+        "items": [
+          { "name": "Chalet", "capacity": "4–6 guests", "desc": "A private house with a terrace and mountain views, fully equipped kitchen.", "priceFrom": "38,000", "img": "placeholder-01.jpg" },
+          { "name": "Family cottage", "capacity": "6–8 guests", "desc": "Two floors, several bedrooms, a living room and a barbecue area — for large families and groups.", "priceFrom": "52,000", "img": "placeholder-02.jpg" },
+          { "name": "Guesthouse room", "capacity": "2–3 guests", "desc": "A compact, cosy room in the main building, close to the pool and banquet hall.", "priceFrom": "22,000", "img": "placeholder-07.jpg" }
+        ]
+      },
+      "rates": {
+        "title": "Seasonal rates",
+        "subtitle": "Price per night, ₸",
+        "headers": ["Accommodation type", "Weekdays", "Weekends", "Holidays / high season"],
+        "rows": [
+          ["Chalet", "45,000", "55,000", "68,000"],
+          ["Family cottage", "62,000", "75,000", "92,000"],
+          ["Guesthouse room", "26,000", "32,000", "40,000"]
+        ]
+      },
+      "infra": {
+        "title": "Infrastructure",
+        "items": [
+          { "title": "Pool", "icon": "pool" },
+          { "title": "Sauna & bathhouse", "icon": "sauna" },
+          { "title": "Sports grounds", "icon": "sport" },
+          { "title": "Banquet hall", "icon": "hall" }
+        ]
+      },
+      "cta": { "title": "Not sure which format fits?", "text": "Our manager will help you pick accommodation based on dates and guest count.", "label": "Message on WhatsApp" }
+    },
+    "business": {
+      "title": "For Business — team-building & corporate events | Tau-Turan Resort",
+      "description": "A team-building and corporate events venue near Almaty: halls, catering, outdoor activities, transfer.",
+      "hero": {
+        "eyebrow": "B2B & HR",
+        "h1": "A team-building venue near Almaty",
+        "lead": "Seminar halls, catering, professional sound and outdoor activities — for teams from 10 to 200+ people."
+      },
+      "capabilities": {
+        "title": "What we provide",
+        "items": [
+          { "title": "Seminar halls", "text": "Equipped spaces for conferences and strategy sessions." },
+          { "title": "Catering", "text": "Banquet and buffet menus tailored to your event format." },
+          { "title": "Sound & lighting", "text": "Professional technical equipment for presentations and ceremonies." },
+          { "title": "Outdoor activities", "text": "Team-building programs run by certified instructors." },
+          { "title": "Group accommodation", "text": "Simultaneous housing for large teams across chalets and cottages." },
+          { "title": "Transfer", "text": "Organized transport for groups to and from Almaty." }
+        ]
+      },
+      "pdf": {
+        "title": "PDF presentation for HR and office managers",
+        "text": "Formats, venues and prices for corporate events — in a single file.",
+        "button": "Download PDF proposal",
+        "href": "assets/docs/tau-turan-corporate-presentation.pdf"
+      },
+      "b2bTrust": {
+        "title": "We work under contract",
+        "items": [
+          { "title": "Contract & invoice", "text": "Full legal support for the deal." },
+          { "title": "VAT and non-VAT billing", "text": "Payment forms that match your company's accounting policy." },
+          { "title": "Certified instructors", "text": "Activity safety confirmed by accreditation." },
+          { "title": "Bank transfer & prepayment", "text": "Flexible settlement terms for legal entities." }
+        ]
+      },
+      "form": {
+        "title": "Corporate event request",
+        "subtitle": "Fill out the form — our corporate events manager will reach out on WhatsApp.",
+        "company": "Company",
+        "contactPerson": "Contact person",
+        "phone": "Phone",
+        "guests": "Number of participants",
+        "format": "Event format",
+        "comment": "Comment",
+        "submit": "Submit request",
+        "success": "Your request is ready — send the message in the WhatsApp window that just opened.",
+        "waTitle": "Corporate event request — Tau-Turan Resort"
+      },
+      "cta": { "title": "Planning an event?", "text": "Let's discuss the format, dates and budget.", "label": "Message on WhatsApp" }
+    },
+    "gallery": {
+      "title": "Gallery — photos, videos & testimonials | Tau-Turan Resort",
+      "description": "Photo and video gallery of Tau-Turan Resort: mountains, interiors, activities. Video, audio and written guest testimonials.",
+      "hero": {
+        "eyebrow": "Media",
+        "h1": "The Tau-Turan atmosphere",
+        "lead": "Mountain views, interiors and active getaways — in photo and video. Swipe the carousel or use the arrows."
+      },
+      "filters": {
+        "winter": "Winter",
+        "summer": "Summer",
+        "rooms": "Rooms",
+        "activities": "Activities"
+      },
+      "instagramCta": { "label": "See more on Instagram", "href": "https://instagram.com/tauturaninfo" },
+      "testimonials": {
+        "title": "Testimonials",
+        "subtitle": "Video, audio, written and 2GIS reviews — real guest impressions",
+        "tabs": { "video": "Video", "written": "Written", "audio": "Audio", "geo": "2GIS" },
+        "video": [
+          { "name": "Sanzhar T.", "role": "Corporate client", "poster": "placeholder-03.jpg" },
+          { "name": "Aigerim S.", "role": "Family getaway", "poster": "placeholder-04.jpg" },
+          { "name": "Dana M.", "role": "Event organizer", "poster": "placeholder-05.jpg" }
+        ],
+        "written": [
+          { "name": "Yerzhan A.", "role": "Family getaway", "text": "The best place to escape the city, just an hour away. The kids still ask to go back." },
+          { "name": "Gulnara R.", "role": "Team-building, 60 people", "text": "Great activity organization, everyone was happy with the program." },
+          { "name": "Timur Zh.", "role": "Anniversary", "text": "The banquet hall and the mountain view created exactly the atmosphere we wanted." },
+          { "name": "Assel N.", "role": "Family getaway", "text": "The bathhouse after an active day was exactly what we needed. We'll definitely be back in winter." }
+        ],
+        "audio": [
+          { "name": "Bekzat O.", "role": "Corporate retreat", "date": "March 2026", "src": "assets/audio/placeholder-1.wav" },
+          { "name": "Indira S.", "role": "Family getaway", "date": "February 2026", "src": "assets/audio/placeholder-1.wav" },
+          { "name": "Nurlan K.", "role": "Wedding", "date": "January 2026", "src": "assets/audio/placeholder-1.wav" }
+        ],
+        "geo": [
+          { "name": "2GIS review", "rating": 5, "text": "A wonderful place for a family getaway, the staff is very attentive.", "href": "https://2gis.kz" },
+          { "name": "2GIS review", "rating": 5, "text": "We held a corporate event here — the organization was excellent.", "href": "https://2gis.kz" },
+          { "name": "2GIS review", "rating": 4, "text": "Beautiful nature, good infrastructure. Recommended.", "href": "https://2gis.kz" }
+        ]
+      },
+      "cta": { "title": "Liked the atmosphere?", "text": "Book your visit today.", "label": "Book a tour" }
+    },
+    "contacts": {
+      "title": "Contacts & Booking | Tau-Turan Resort",
+      "description": "Tau-Turan Resort contacts, directions and a booking form. WhatsApp lines for family getaways and corporate requests.",
+      "hero": {
+        "eyebrow": "Booking",
+        "h1": "Contacts & Booking",
+        "lead": "Reach us however is convenient, or leave a request — we'll confirm your booking within 15 minutes."
+      },
+      "contactCards": [
+        { "title": "Room booking", "text": "Family getaways and private visits", "waKey": "booking" },
+        { "title": "Corporate requests", "text": "Team-building, conferences, events", "waKey": "business" },
+        { "title": "E-mail", "text": "tauturaninfo@gmail.com" },
+        { "title": "Working hours", "text": "Daily, 09:00 – 20:00" }
+      ],
+      "map": { "title": "How to get there", "text": "Almaty region, Talgar district, Besagash village, Tau-Turan mountain area — about an hour's drive from central Almaty via the Kuldzha tract." },
+      "form": {
+        "title": "Booking request",
+        "subtitle": "Leave your contact details — we'll reach out on WhatsApp.",
+        "name": "Name",
+        "phone": "Phone",
+        "date": "Check-in date",
+        "format": "Format",
+        "formats": ["Family getaway", "Corporate", "Event / celebration"],
+        "guests": "Number of guests",
+        "comment": "Comment",
+        "submit": "Submit request",
+        "success": "Your request is ready — send the message in the WhatsApp window that just opened.",
+        "waTitle": "Booking request — Tau-Turan Resort"
+      },
+      "legal": { "title": "Legal details", "text": "Full legal details are provided on request for contract purposes." }
+    }
+  }
+}
