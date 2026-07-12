@@ -6,6 +6,7 @@ import { icon } from './icons.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = ROOT;
+const BASE = (process.env.SITE_BASE || '').replace(/\/$/, '');
 
 const LANGS = ['ru', 'kz', 'en'];
 const PAGE_KEYS = ['home', 'rooms', 'business', 'gallery', 'contacts'];
@@ -17,7 +18,7 @@ for (const lang of LANGS) {
 
 function crossHref(lang, pageKey) {
   const c = content[lang];
-  return `/${lang}/${c.slugs[pageKey]}`;
+  return `${BASE}/${lang}/${c.slugs[pageKey]}`;
 }
 
 function waHref(number, text) {
@@ -53,22 +54,22 @@ function renderHead(lang, pageKey, c) {
   <link rel="canonical" href="${crossHref(lang, pageKey)}">
   ${alternates}
   <link rel="alternate" hreflang="x-default" href="${crossHref('ru', pageKey)}">
-  <link rel="icon" href="/assets/img/logo.png" type="image/png">
+  <link rel="icon" href="${BASE}/assets/img/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css">`;
+  <link rel="stylesheet" href="${BASE}/assets/css/style.css">`;
 }
 
 function renderHeader(lang, pageKey, c) {
   const navLinks = PAGE_KEYS.map((key) => {
     const current = key === pageKey ? ' aria-current="page"' : '';
-    return `<a href="/${lang}/${c.slugs[key]}"${current}>${c.nav[key]}</a>`;
+    return `<a href="${BASE}/${lang}/${c.slugs[key]}"${current}>${c.nav[key]}</a>`;
   }).join('\n        ');
 
   return `<header class="site-header">
     <div class="container site-header__inner">
-      <a href="/${lang}/${c.slugs.home}" class="brand">
-        <img src="/assets/img/logo.png" alt="Tau-Turan Resort" width="38" height="38">
+      <a href="${BASE}/${lang}/${c.slugs.home}" class="brand">
+        <img src="${BASE}/assets/img/logo.png" alt="Tau-Turan Resort" width="38" height="38">
         <span class="brand__name">Tau-Turan<span>Resort</span></span>
       </a>
       <nav class="main-nav" aria-label="Main">
@@ -88,7 +89,7 @@ function renderHeader(lang, pageKey, c) {
 function renderMobileNav(lang, pageKey, c) {
   const navLinks = PAGE_KEYS.map((key) => {
     const current = key === pageKey ? ' aria-current="page"' : '';
-    return `<a href="/${lang}/${c.slugs[key]}"${current}>${c.nav[key]}</a>`;
+    return `<a href="${BASE}/${lang}/${c.slugs[key]}"${current}>${c.nav[key]}</a>`;
   }).join('\n      ');
   return `<div class="mobile-nav" id="mobile-nav" data-mobile-nav data-open="false">
     <div class="mobile-nav__scrim" data-mobile-scrim></div>
@@ -108,13 +109,13 @@ function renderMobileNav(lang, pageKey, c) {
 }
 
 function renderFooter(lang, pageKey, c) {
-  const navLinks = PAGE_KEYS.map((key) => `<a href="/${lang}/${c.slugs[key]}">${c.nav[key]}</a>`).join('\n          ');
+  const navLinks = PAGE_KEYS.map((key) => `<a href="${BASE}/${lang}/${c.slugs[key]}">${c.nav[key]}</a>`).join('\n          ');
   return `<footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img src="/assets/img/logo.png" alt="Tau-Turan Resort" width="34" height="34">
+            <img src="${BASE}/assets/img/logo.png" alt="Tau-Turan Resort" width="34" height="34">
             <span>Tau-Turan Resort</span>
           </div>
           <p style="max-width:34ch">${c.footer.about}</p>
@@ -154,12 +155,12 @@ function renderWaFab(c) {
 }
 
 function scripts() {
-  return `<script src="/assets/js/main.js" defer></script>
-  <script src="/assets/js/carousel.js" defer></script>
-  <script src="/assets/js/calculator.js" defer></script>
-  <script src="/assets/js/forms.js" defer></script>
-  <script src="/assets/js/gallery-filter.js" defer></script>
-  <script src="/assets/js/i18n.js" defer></script>`;
+  return `<script src="${BASE}/assets/js/main.js" defer></script>
+  <script src="${BASE}/assets/js/carousel.js" defer></script>
+  <script src="${BASE}/assets/js/calculator.js" defer></script>
+  <script src="${BASE}/assets/js/forms.js" defer></script>
+  <script src="${BASE}/assets/js/gallery-filter.js" defer></script>
+  <script src="${BASE}/assets/js/i18n.js" defer></script>`;
 }
 
 function carousel(id, slidesHtml, opts = {}) {
@@ -195,7 +196,7 @@ function renderHome(lang, c) {
           <div class="segment-card__icon">${icon(SEGMENT_ICONS[i])}</div>
           <h3>${s.title}</h3>
           <p>${s.text}</p>
-          <a href="/${lang}/${s.href}">${s.label}</a>
+          <a href="${BASE}/${lang}/${s.href}">${s.label}</a>
         </div>`).join('');
 
   const typeOptions = p.calculator.types.map((t) => `<option value="${t.value}" data-high="${t.high}" data-low="${t.low}">${t.label}</option>`).join('');
@@ -210,7 +211,7 @@ function renderHome(lang, c) {
   const galleryImgs = ['placeholder-01.jpg','placeholder-03.jpg','placeholder-05.jpg','placeholder-07.jpg','placeholder-09.jpg','placeholder-02.jpg'];
   const galleryTeaser = galleryImgs.map((img) => `
         <div class="carousel__slide">
-          <div class="gallery-slide"><img src="/assets/img/${img}" alt="Tau-Turan" loading="lazy" width="300" height="375"></div>
+          <div class="gallery-slide"><img src="${BASE}/assets/img/${img}" alt="Tau-Turan" loading="lazy" width="300" height="375"></div>
         </div>`).join('');
 
   const testiTeaser = p.testimonialsTeaser.items.map((t) => `
@@ -231,12 +232,12 @@ function renderHome(lang, c) {
         <h1>${p.hero.h1}</h1>
         <p class="lead">${p.hero.lead}</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="/${lang}/${c.slugs.contacts}">${p.hero.ctaPrimary.label}</a>
+          <a class="btn btn-primary" href="${BASE}/${lang}/${c.slugs.contacts}">${p.hero.ctaPrimary.label}</a>
           <a class="btn btn-ghost" href="${p.hero.ctaSecondary.href}">${p.hero.ctaSecondary.label}</a>
         </div>
       </div>
       <div class="hero__video-card">
-        <video src="/assets/video/hero-welcome-ru.mp4" poster="/assets/img/hero-welcome-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="${BASE}/assets/video/hero-welcome-ru.mp4" poster="${BASE}/assets/img/hero-welcome-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
         <div class="hero__video-card__tag"><span class="pulse-dot"></span><span>${p.hero.videoTag}</span></div>
       </div>
     </div>
@@ -297,7 +298,7 @@ function renderHome(lang, c) {
     <div class="container">
       <div class="head-row reveal">
         <div><h2>${p.galleryTeaser.title}</h2><p>${p.galleryTeaser.subtitle}</p></div>
-        <a class="btn btn-outline btn-sm" href="/${lang}/${c.slugs.gallery}">${p.galleryTeaser.more}</a>
+        <a class="btn btn-outline btn-sm" href="${BASE}/${lang}/${c.slugs.gallery}">${p.galleryTeaser.more}</a>
       </div>
       ${carousel('home-gallery-teaser', galleryTeaser)}
     </div>
@@ -307,7 +308,7 @@ function renderHome(lang, c) {
     <div class="container">
       <div class="head-row reveal">
         <div><h2>${p.testimonialsTeaser.title}</h2><p>${p.testimonialsTeaser.subtitle}</p></div>
-        <a class="btn btn-outline btn-sm" href="/${lang}/${c.slugs.gallery}#testimonials">${p.testimonialsTeaser.more}</a>
+        <a class="btn btn-outline btn-sm" href="${BASE}/${lang}/${c.slugs.gallery}#testimonials">${p.testimonialsTeaser.more}</a>
       </div>
       ${carousel('home-testi-teaser', testiTeaser)}
     </div>
@@ -317,7 +318,7 @@ function renderHome(lang, c) {
     <div class="container" style="text-align:center">
       <h2 class="reveal">${p.finalCta.title}</h2>
       <p class="reveal" style="max-width:50ch;margin-inline:auto">${p.finalCta.text}</p>
-      <div class="reveal" style="margin-top:20px"><a class="btn btn-primary" href="/${lang}/${c.slugs.contacts}">${p.finalCta.ctaLabel}</a></div>
+      <div class="reveal" style="margin-top:20px"><a class="btn btn-primary" href="${BASE}/${lang}/${c.slugs.contacts}">${p.finalCta.ctaLabel}</a></div>
     </div>
   </section>`;
 }
@@ -327,7 +328,7 @@ function renderRooms(lang, c) {
   const p = c.pages.rooms;
   const roomCards = p.rooms.items.map((r) => `
         <div class="room-card reveal">
-          <div class="room-card__media"><img src="/assets/img/${r.img}" alt="${escAttr(r.name)}" loading="lazy" width="400" height="300"></div>
+          <div class="room-card__media"><img src="${BASE}/assets/img/${r.img}" alt="${escAttr(r.name)}" loading="lazy" width="400" height="300"></div>
           <div class="room-card__body">
             <h3>${r.name}</h3>
             <div class="room-card__meta"><span>${r.capacity}</span></div>
@@ -419,7 +420,7 @@ function renderBusiness(lang, c) {
       <div class="pdf-card reveal">
         <div class="pdf-card__icon">${icon('doc', {size:28})}</div>
         <div class="pdf-card__text"><strong>${p.pdf.title}</strong><span>${p.pdf.text}</span></div>
-        <a class="btn btn-primary" href="/assets/${p.pdf.href.replace(/^assets\//,'')}" download>${p.pdf.button}</a>
+        <a class="btn btn-primary" href="${BASE}/assets/${p.pdf.href.replace(/^assets\//,'')}" download>${p.pdf.button}</a>
       </div>
     </div>
   </section>
@@ -477,7 +478,7 @@ function renderGallery(lang, c) {
   const tabs = filterKeys.map((k, i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${p.filters[k]}</button>`).join('');
   const panels = filterKeys.map((k, i) => {
     const imgs = galleryImagesFor(k).map((img) => `
-          <div class="carousel__slide"><div class="gallery-slide"><img src="/assets/img/${img}" alt="${escAttr(p.filters[k])}" loading="lazy" width="300" height="375"><span class="gallery-slide__tag">${p.filters[k]}</span></div></div>`).join('');
+          <div class="carousel__slide"><div class="gallery-slide"><img src="${BASE}/assets/img/${img}" alt="${escAttr(p.filters[k])}" loading="lazy" width="300" height="375"><span class="gallery-slide__tag">${p.filters[k]}</span></div></div>`).join('');
     return `<div data-filter-panel="${k}" data-filter-group="gallery-filter" ${i === 0 ? '' : 'hidden'}>
         ${carousel('gallery-' + k, imgs)}
       </div>`;
@@ -488,8 +489,8 @@ function renderGallery(lang, c) {
 
   const videoSlides = t.video.map((v) => `
         <div class="carousel__slide">
-          <div class="testi-slide--video" data-video-testi data-video-src="/assets/video/hero-welcome-ru.mp4">
-            <img src="/assets/img/${v.poster}" alt="${escAttr(v.name)}" loading="lazy" width="200" height="356">
+          <div class="testi-slide--video" data-video-testi data-video-src="${BASE}/assets/video/hero-welcome-ru.mp4">
+            <img src="${BASE}/assets/img/${v.poster}" alt="${escAttr(v.name)}" loading="lazy" width="200" height="356">
             <span class="testi-slide--video__play" data-play>${icon('play', {size: 20})}</span>
             <span class="testi-slide--video__meta"><strong>${v.name}</strong><span>${v.role}</span></span>
           </div>
@@ -514,7 +515,7 @@ function renderGallery(lang, c) {
               <div><strong>${a.name}</strong><span>${a.role} · ${a.date}</span></div>
             </div>
             <div class="audio-player" data-audio-player>
-              <audio src="/${a.src}" preload="metadata"></audio>
+              <audio src="${BASE}/${a.src}" preload="metadata"></audio>
               <button type="button" data-audio-toggle aria-label="Play/Pause">
                 <span data-icon-play>${icon('play', {size: 14})}</span>
                 <span data-icon-pause style="display:none">${icon('pause', {size: 14})}</span>
@@ -577,7 +578,7 @@ function renderGallery(lang, c) {
     <div class="container" style="text-align:center">
       <h2 class="reveal">${p.cta.title}</h2>
       <p class="reveal">${p.cta.text}</p>
-      <div class="reveal" style="margin-top:16px"><a class="btn btn-primary" href="/${lang}/${c.slugs.contacts}">${p.cta.label}</a></div>
+      <div class="reveal" style="margin-top:16px"><a class="btn btn-primary" href="${BASE}/${lang}/${c.slugs.contacts}">${p.cta.label}</a></div>
     </div>
   </section>`;
 }
@@ -696,7 +697,7 @@ for (const lang of LANGS) {
 // root redirect to default language
 mkdirSync(DIST, { recursive: true });
 writeFileSync(path.join(DIST, 'index.html'), `<!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=/ru/index.html">
+<html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=${BASE}/ru/index.html">
 <title>Tau-Turan Resort</title></head>
-<body><p>Redirecting to <a href="/ru/index.html">/ru/index.html</a>...</p></body></html>`, 'utf-8');
+<body><p>Redirecting to <a href="${BASE}/ru/index.html">${BASE}/ru/index.html</a>...</p></body></html>`, 'utf-8');
 console.log('wrote root redirect index.html');
