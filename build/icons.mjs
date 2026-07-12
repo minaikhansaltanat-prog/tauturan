@@ -28,6 +28,7 @@ const PATHS = {
   check: '<path d="M4 12l5 5L20 6"/>',
   food: '<path d="M6 2v7a2 2 0 0 0 4 0V2M8 9v13"/><path d="M16 2c-1.6 0-3 1.6-3 5s1.4 5 3 5v8"/>',
   calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  chevronDown: '<path d="M6 9l6 6 6-6"/>',
 };
 
 export function icon(name, opts = {}) {

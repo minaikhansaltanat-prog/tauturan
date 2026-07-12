@@ -32,7 +32,13 @@
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Language"><a href="/tauturan/ru/nomera-i-tseny.html" data-lang-link data-lang="ru" aria-current="true">РУС</a><a href="/tauturan/kz/nomerler-men-bagalar.html" data-lang-link data-lang="kz" aria-current="false">ҚАЗ</a><a href="/tauturan/en/rooms-and-rates.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
-        <div class="lang-switch-mobile" role="group" aria-label="Language"><a href="/tauturan/ru/nomera-i-tseny.html" data-lang-link data-lang="ru" aria-current="true">РУС</a><a href="/tauturan/kz/nomerler-men-bagalar.html" data-lang-link data-lang="kz" aria-current="false">ҚАЗ</a><a href="/tauturan/en/rooms-and-rates.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
+        <div class="lang-dropdown" data-lang-dropdown>
+        <button type="button" class="lang-dropdown__trigger" data-lang-dropdown-trigger data-lang="ru" aria-expanded="false" aria-haspopup="true" aria-label="Language">
+          <span>РУС</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dropdown__menu" data-lang-dropdown-menu hidden role="menu"><a href="/tauturan/kz/nomerler-men-bagalar.html" data-lang-link data-lang="kz">ҚАЗ</a><a href="/tauturan/en/rooms-and-rates.html" data-lang-link data-lang="en">ENG</a></div>
+      </div>
         <button type="button" class="burger" data-burger aria-expanded="false" aria-label="Menu" aria-controls="mobile-nav">
           <span></span>
         </button>

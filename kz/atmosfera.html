@@ -32,7 +32,13 @@
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Language"><a href="/tauturan/ru/atmosfera.html" data-lang-link data-lang="ru" aria-current="false">РУС</a><a href="/tauturan/kz/atmosfera.html" data-lang-link data-lang="kz" aria-current="true">ҚАЗ</a><a href="/tauturan/en/gallery.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
-        <div class="lang-switch-mobile" role="group" aria-label="Language"><a href="/tauturan/ru/atmosfera.html" data-lang-link data-lang="ru" aria-current="false">РУС</a><a href="/tauturan/kz/atmosfera.html" data-lang-link data-lang="kz" aria-current="true">ҚАЗ</a><a href="/tauturan/en/gallery.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
+        <div class="lang-dropdown" data-lang-dropdown>
+        <button type="button" class="lang-dropdown__trigger" data-lang-dropdown-trigger data-lang="kz" aria-expanded="false" aria-haspopup="true" aria-label="Language">
+          <span>ҚАЗ</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dropdown__menu" data-lang-dropdown-menu hidden role="menu"><a href="/tauturan/ru/atmosfera.html" data-lang-link data-lang="ru">РУС</a><a href="/tauturan/en/gallery.html" data-lang-link data-lang="en">ENG</a></div>
+      </div>
         <button type="button" class="burger" data-burger aria-expanded="false" aria-label="Menu" aria-controls="mobile-nav">
           <span></span>
         </button>
@@ -132,7 +138,6 @@
   <section class="section section--stone" id="testimonials">
     <div class="container">
       <div class="head-row reveal"><div><h2>Пікірлер</h2><p>Видео, аудио, мәтін және 2ГИС пікірлері — қонақтардың нақты әсерлері</p></div></div>
-
       <div class="filter-tabs reveal" data-filter-tabs="testi-filter"><button type="button" data-filter="video" aria-pressed="true">Видео</button><button type="button" data-filter="written" aria-pressed="false">Мәтін</button><button type="button" data-filter="audio" aria-pressed="false">Аудио</button><button type="button" data-filter="geo" aria-pressed="false">2ГИС</button></div>
 
       <div data-filter-panel="video" data-filter-group="testi-filter">

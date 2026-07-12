@@ -32,7 +32,13 @@
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Language"><a href="/tauturan/ru/index.html" data-lang-link data-lang="ru" aria-current="true">РУС</a><a href="/tauturan/kz/index.html" data-lang-link data-lang="kz" aria-current="false">ҚАЗ</a><a href="/tauturan/en/index.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
-        <div class="lang-switch-mobile" role="group" aria-label="Language"><a href="/tauturan/ru/index.html" data-lang-link data-lang="ru" aria-current="true">РУС</a><a href="/tauturan/kz/index.html" data-lang-link data-lang="kz" aria-current="false">ҚАЗ</a><a href="/tauturan/en/index.html" data-lang-link data-lang="en" aria-current="false">ENG</a></div>
+        <div class="lang-dropdown" data-lang-dropdown>
+        <button type="button" class="lang-dropdown__trigger" data-lang-dropdown-trigger data-lang="ru" aria-expanded="false" aria-haspopup="true" aria-label="Language">
+          <span>РУС</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dropdown__menu" data-lang-dropdown-menu hidden role="menu"><a href="/tauturan/kz/index.html" data-lang-link data-lang="kz">ҚАЗ</a><a href="/tauturan/en/index.html" data-lang-link data-lang="en">ENG</a></div>
+      </div>
         <button type="button" class="burger" data-burger aria-expanded="false" aria-label="Menu" aria-controls="mobile-nav">
           <span></span>
         </button>
@@ -204,40 +210,83 @@
     </div>
   </section>
 
-  <section class="section section--tight section--stone">
+  <section class="section section--tight section--stone" id="testimonials">
     <div class="container">
       <div class="head-row reveal">
         <div><h2>Что говорят гости</h2><p>Текстовые, аудио и видео отзывы — полный список в разделе «Атмосфера»</p></div>
-        <a class="btn btn-outline btn-sm" href="/tauturan/ru/atmosfera.html#testimonials">Все отзывы</a>
       </div>
-      <div class="carousel" data-carousel id="home-testi-teaser">
+      <div class="filter-tabs reveal" data-filter-tabs="home-testi-filter"><button type="button" data-filter="video" aria-pressed="true">Видео</button><button type="button" data-filter="written" aria-pressed="false">Текст</button><button type="button" data-filter="audio" aria-pressed="false">Аудио</button><button type="button" data-filter="geo" aria-pressed="false">2ГИС</button></div>
+
+      <div data-filter-panel="video" data-filter-group="home-testi-filter">
+        <div class="carousel" data-carousel id="home-testi-video">
+    <div class="carousel__viewport" data-viewport>
+      <div class="carousel__track" data-track>
+        
+        <div class="carousel__slide">
+          <div class="testi-slide--video" data-video-testi data-video-src="/tauturan/assets/video/hero-welcome-ru.mp4">
+            <img src="/tauturan/assets/img/placeholder-03.jpg" alt="Санжар Т." loading="lazy" width="200" height="356">
+            <span class="testi-slide--video__play" data-play><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="testi-slide--video__meta"><strong>Санжар Т.</strong><span>Корпоративный клиент</span></span>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide--video" data-video-testi data-video-src="/tauturan/assets/video/hero-welcome-ru.mp4">
+            <img src="/tauturan/assets/img/placeholder-04.jpg" alt="Айгерим С." loading="lazy" width="200" height="356">
+            <span class="testi-slide--video__play" data-play><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="testi-slide--video__meta"><strong>Айгерим С.</strong><span>Семейный отдых</span></span>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide--video" data-video-testi data-video-src="/tauturan/assets/video/hero-welcome-ru.mp4">
+            <img src="/tauturan/assets/img/placeholder-05.jpg" alt="Дана М." loading="lazy" width="200" height="356">
+            <span class="testi-slide--video__play" data-play><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="testi-slide--video__meta"><strong>Дана М.</strong><span>Организатор события</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+      </div>
+      <div data-filter-panel="written" data-filter-group="home-testi-filter" hidden>
+        <div class="carousel" data-carousel id="home-testi-written">
     <div class="carousel__viewport" data-viewport>
       <div class="carousel__track" data-track>
         
         <div class="carousel__slide">
           <div class="testi-slide">
-            <p>“Приехали на выходные всей семьёй — дети в восторге от бассейна, а мы просто выдохнули от тишины и воздуха.”</p>
+            <p>“Лучшее место для отдыха от города за час езды. Дети до сих пор просятся обратно.”</p>
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">Е</div>
+              <div><strong>Ержан А.</strong><span>Семейный отдых</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide">
+            <p>“Отличная организация активностей, все остались довольны программой.”</p>
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">Г</div>
+              <div><strong>Гульнара Р.</strong><span>Тимбилдинг, 60 человек</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide">
+            <p>“Банкетный зал и вид на горы создали именно ту атмосферу, которую мы хотели.”</p>
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">Т</div>
+              <div><strong>Тимур Ж.</strong><span>Юбилей</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide">
+            <p>“Баня после активного дня — то, что нужно. Обязательно вернёмся зимой.”</p>
             <div class="testi-slide__who">
               <div class="testi-slide__avatar">А</div>
-              <div><strong>Айгерим С.</strong><span>Семейный отдых</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel__slide">
-          <div class="testi-slide">
-            <p>“Организовали тимбилдинг для 40 человек. Всё чётко: трансфер, звук, площадки. Приедем ещё.”</p>
-            <div class="testi-slide__who">
-              <div class="testi-slide__avatar">М</div>
-              <div><strong>Марат Б.</strong><span>HR-директор, IT-компания</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel__slide">
-          <div class="testi-slide">
-            <p>“Провели свадьбу на террасе с видом на горы — гости до сих пор вспоминают эту площадку.”</p>
-            <div class="testi-slide__who">
-              <div class="testi-slide__avatar">Д</div>
-              <div><strong>Динара К.</strong><span>Организатор свадеб</span></div>
+              <div><strong>Асель Н.</strong><span>Семейный отдых</span></div>
             </div>
           </div>
         </div>
@@ -246,6 +295,101 @@
     <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
     <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
   </div>
+      </div>
+      <div data-filter-panel="audio" data-filter-group="home-testi-filter" hidden>
+        <div class="carousel" data-carousel data-autoplay="false" id="home-testi-audio">
+    <div class="carousel__viewport" data-viewport>
+      <div class="carousel__track" data-track>
+        
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--audio">
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">Б</div>
+              <div><strong>Бекзат О.</strong><span>Корпоративный выезд · март 2026</span></div>
+            </div>
+            <div class="audio-player" data-audio-player>
+              <audio src="/tauturan/assets/audio/placeholder-1.wav" preload="metadata"></audio>
+              <button type="button" data-audio-toggle aria-label="Play/Pause">
+                <span data-icon-play><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span data-icon-pause style="display:none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></span>
+              </button>
+              <div class="audio-player__bar" data-audio-bar><div class="audio-player__bar-fill" data-audio-fill></div></div>
+              <span class="audio-player__time" data-audio-time>0:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--audio">
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">И</div>
+              <div><strong>Индира С.</strong><span>Семейный отдых · февраль 2026</span></div>
+            </div>
+            <div class="audio-player" data-audio-player>
+              <audio src="/tauturan/assets/audio/placeholder-1.wav" preload="metadata"></audio>
+              <button type="button" data-audio-toggle aria-label="Play/Pause">
+                <span data-icon-play><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span data-icon-pause style="display:none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></span>
+              </button>
+              <div class="audio-player__bar" data-audio-bar><div class="audio-player__bar-fill" data-audio-fill></div></div>
+              <span class="audio-player__time" data-audio-time>0:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--audio">
+            <div class="testi-slide__who">
+              <div class="testi-slide__avatar">Н</div>
+              <div><strong>Нурлан К.</strong><span>Свадьба · январь 2026</span></div>
+            </div>
+            <div class="audio-player" data-audio-player>
+              <audio src="/tauturan/assets/audio/placeholder-1.wav" preload="metadata"></audio>
+              <button type="button" data-audio-toggle aria-label="Play/Pause">
+                <span data-icon-play><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                <span data-icon-pause style="display:none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></span>
+              </button>
+              <div class="audio-player__bar" data-audio-bar><div class="audio-player__bar-fill" data-audio-fill></div></div>
+              <span class="audio-player__time" data-audio-time>0:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+      </div>
+      <div data-filter-panel="geo" data-filter-group="home-testi-filter" hidden>
+        <div class="carousel" data-carousel id="home-testi-geo">
+    <div class="carousel__viewport" data-viewport>
+      <div class="carousel__track" data-track>
+        
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--map">
+            <div class="stars" aria-label="5/5">★★★★★</div>
+            <p>“Прекрасное место для отдыха всей семьёй, персонал очень отзывчивый.”</p>
+            <a class="btn btn-outline btn-sm" href="https://2gis.kz" target="_blank" rel="noopener">2GIS →</a>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--map">
+            <div class="stars" aria-label="5/5">★★★★★</div>
+            <p>“Проводили здесь корпоратив — организация на высоте.”</p>
+            <a class="btn btn-outline btn-sm" href="https://2gis.kz" target="_blank" rel="noopener">2GIS →</a>
+          </div>
+        </div>
+        <div class="carousel__slide">
+          <div class="testi-slide testi-slide--map">
+            <div class="stars" aria-label="4/5">★★★★☆</div>
+            <p>“Красивая природа, хорошая инфраструктура. Рекомендуем.”</p>
+            <a class="btn btn-outline btn-sm" href="https://2gis.kz" target="_blank" rel="noopener">2GIS →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+      </div>
     </div>
   </section>
 

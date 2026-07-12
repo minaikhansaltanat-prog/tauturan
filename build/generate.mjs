@@ -41,6 +41,20 @@ function langSwitchAnchors(lang, pageKey) {
   }).join('');
 }
 
+function langDropdownHeader(lang, pageKey, c) {
+  const others = LANGS.filter((l) => l !== lang).map((l) => {
+    const oc = content[l];
+    return `<a href="${crossHref(l, pageKey)}" data-lang-link data-lang="${l}">${oc.langNames[l]}</a>`;
+  }).join('');
+  return `<div class="lang-dropdown" data-lang-dropdown>
+        <button type="button" class="lang-dropdown__trigger" data-lang-dropdown-trigger data-lang="${lang}" aria-expanded="false" aria-haspopup="true" aria-label="Language">
+          <span>${c.langNames[lang]}</span>
+          ${icon('chevronDown', {size: 14})}
+        </button>
+        <div class="lang-dropdown__menu" data-lang-dropdown-menu hidden role="menu">${others}</div>
+      </div>`;
+}
+
 function renderHead(lang, pageKey, c) {
   const page = c.pages[pageKey];
   const alternates = LANGS.map((l) => {
@@ -77,7 +91,7 @@ function renderHeader(lang, pageKey, c) {
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Language">${langSwitchAnchors(lang, pageKey)}</div>
-        <div class="lang-switch-mobile" role="group" aria-label="Language">${langSwitchAnchors(lang, pageKey)}</div>
+        ${langDropdownHeader(lang, pageKey, c)}
         <button type="button" class="burger" data-burger aria-expanded="false" aria-label="Menu" aria-controls="mobile-nav">
           <span></span>
         </button>
@@ -214,17 +228,6 @@ function renderHome(lang, c) {
           <div class="gallery-slide"><img src="${BASE}/assets/img/${img}" alt="Tau-Turan" loading="lazy" width="300" height="375"></div>
         </div>`).join('');
 
-  const testiTeaser = p.testimonialsTeaser.items.map((t) => `
-        <div class="carousel__slide">
-          <div class="testi-slide">
-            <p>“${t.text}”</p>
-            <div class="testi-slide__who">
-              <div class="testi-slide__avatar">${t.name.charAt(0)}</div>
-              <div><strong>${t.name}</strong><span>${t.role}</span></div>
-            </div>
-          </div>
-        </div>`).join('');
-
   return `<section class="hero">
     <div class="container hero__grid">
       <div>
@@ -304,13 +307,12 @@ function renderHome(lang, c) {
     </div>
   </section>
 
-  <section class="section section--tight section--stone">
+  <section class="section section--tight section--stone" id="testimonials">
     <div class="container">
       <div class="head-row reveal">
         <div><h2>${p.testimonialsTeaser.title}</h2><p>${p.testimonialsTeaser.subtitle}</p></div>
-        <a class="btn btn-outline btn-sm" href="${BASE}/${lang}/${c.slugs.gallery}#testimonials">${p.testimonialsTeaser.more}</a>
       </div>
-      ${carousel('home-testi-teaser', testiTeaser)}
+      ${renderTestimonialsWidget(lang, c, {idPrefix: 'home-testi', groupName: 'home-testi-filter'})}
     </div>
   </section>
 
@@ -472,19 +474,10 @@ function galleryImagesFor(cat) {
   return map[cat];
 }
 
-function renderGallery(lang, c) {
-  const p = c.pages.gallery;
-  const filterKeys = ['winter', 'summer', 'rooms', 'activities'];
-  const tabs = filterKeys.map((k, i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${p.filters[k]}</button>`).join('');
-  const panels = filterKeys.map((k, i) => {
-    const imgs = galleryImagesFor(k).map((img) => `
-          <div class="carousel__slide"><div class="gallery-slide"><img src="${BASE}/assets/img/${img}" alt="${escAttr(p.filters[k])}" loading="lazy" width="300" height="375"><span class="gallery-slide__tag">${p.filters[k]}</span></div></div>`).join('');
-    return `<div data-filter-panel="${k}" data-filter-group="gallery-filter" ${i === 0 ? '' : 'hidden'}>
-        ${carousel('gallery-' + k, imgs)}
-      </div>`;
-  }).join('');
-
-  const t = p.testimonials;
+function renderTestimonialsWidget(lang, c, opts) {
+  const idPrefix = opts.idPrefix || 'testi';
+  const groupName = opts.groupName || 'testi-filter';
+  const t = c.pages.gallery.testimonials;
   const tabButtons = ['video', 'written', 'audio', 'geo'].map((k, i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${t.tabs[k]}</button>`).join('');
 
   const videoSlides = t.video.map((v) => `
@@ -535,6 +528,36 @@ function renderGallery(lang, c) {
           </div>
         </div>`).join('');
 
+  return `<div class="filter-tabs reveal" data-filter-tabs="${groupName}">${tabButtons}</div>
+
+      <div data-filter-panel="video" data-filter-group="${groupName}">
+        ${carousel(idPrefix + '-video', videoSlides)}
+      </div>
+      <div data-filter-panel="written" data-filter-group="${groupName}" hidden>
+        ${carousel(idPrefix + '-written', writtenSlides)}
+      </div>
+      <div data-filter-panel="audio" data-filter-group="${groupName}" hidden>
+        ${carousel(idPrefix + '-audio', audioSlides, {autoplay: false})}
+      </div>
+      <div data-filter-panel="geo" data-filter-group="${groupName}" hidden>
+        ${carousel(idPrefix + '-geo', geoSlides)}
+      </div>`;
+}
+
+function renderGallery(lang, c) {
+  const p = c.pages.gallery;
+  const filterKeys = ['winter', 'summer', 'rooms', 'activities'];
+  const tabs = filterKeys.map((k, i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${p.filters[k]}</button>`).join('');
+  const panels = filterKeys.map((k, i) => {
+    const imgs = galleryImagesFor(k).map((img) => `
+          <div class="carousel__slide"><div class="gallery-slide"><img src="${BASE}/assets/img/${img}" alt="${escAttr(p.filters[k])}" loading="lazy" width="300" height="375"><span class="gallery-slide__tag">${p.filters[k]}</span></div></div>`).join('');
+    return `<div data-filter-panel="${k}" data-filter-group="gallery-filter" ${i === 0 ? '' : 'hidden'}>
+        ${carousel('gallery-' + k, imgs)}
+      </div>`;
+  }).join('');
+
+  const t = p.testimonials;
+
   return `<section class="hero" style="padding-bottom:56px">
     <div class="container">
       <p class="eyebrow hero__eyebrow reveal">${p.hero.eyebrow}</p>
@@ -556,21 +579,7 @@ function renderGallery(lang, c) {
   <section class="section section--stone" id="testimonials">
     <div class="container">
       <div class="head-row reveal"><div><h2>${t.title}</h2><p>${t.subtitle}</p></div></div>
-
-      <div class="filter-tabs reveal" data-filter-tabs="testi-filter">${tabButtons}</div>
-
-      <div data-filter-panel="video" data-filter-group="testi-filter">
-        ${carousel('testi-video', videoSlides)}
-      </div>
-      <div data-filter-panel="written" data-filter-group="testi-filter" hidden>
-        ${carousel('testi-written', writtenSlides)}
-      </div>
-      <div data-filter-panel="audio" data-filter-group="testi-filter" hidden>
-        ${carousel('testi-audio', audioSlides, {autoplay: false})}
-      </div>
-      <div data-filter-panel="geo" data-filter-group="testi-filter" hidden>
-        ${carousel('testi-geo', geoSlides)}
-      </div>
+      ${renderTestimonialsWidget(lang, c, {idPrefix: 'testi', groupName: 'testi-filter'})}
     </div>
   </section>
 
