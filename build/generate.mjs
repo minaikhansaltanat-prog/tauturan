@@ -5,7 +5,7 @@ import { icon } from './icons.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = ROOT;
 
 const LANGS = ['ru', 'kz', 'en'];
 const PAGE_KEYS = ['home', 'rooms', 'business', 'gallery', 'contacts'];
